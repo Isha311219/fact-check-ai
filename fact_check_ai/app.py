@@ -46,7 +46,7 @@ def extract_text_from_pdf(pdf_file):
     return text
 
 # -----------------------------------
-# CLAIM EXTRACTION (RULE BASED - DEPLOY SAFE)
+# CLAIM EXTRACTION 
 # -----------------------------------
 def extract_claims(text):
 
@@ -67,7 +67,7 @@ def extract_claims(text):
     return "\n".join(claims)
 
 # -----------------------------------
-# SERPAPI KEY (PUT IN STREAMLIT SECRETS IN DEPLOYMENT)
+# SERPAPI KEY 
 # -----------------------------------
 SERPAPI_KEY = "9356321447da23a80a35b09c06f5d99a77fb0b59fd0af1ee361eb00096104ef4"
 
