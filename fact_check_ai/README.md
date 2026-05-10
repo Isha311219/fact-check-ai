@@ -46,5 +46,6 @@ Each claim is classified as:
 
  ## Run Locally
 pip install -r requirements.txt
+
 streamlit run app.py
 
