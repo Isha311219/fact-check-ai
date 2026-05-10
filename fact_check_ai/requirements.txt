@@ -1,6 +1,4 @@
-google-search-results
 streamlit
 pymupdf
-ollama
 requests
-serpapi
+google-search-results
