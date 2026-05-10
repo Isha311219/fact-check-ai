@@ -42,7 +42,6 @@ Each claim is classified as:
 - Python 🐍
 - Streamlit 🎈
 - PyMuPDF (fitz)
-- Ollama (LLM)
 - SerpAPI (Google Search API)
 - Requests
 
