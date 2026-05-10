@@ -23,7 +23,6 @@ This project is designed for real-world use cases like:
 - Extract raw text using PyMuPDF
 
 ### 🧠 2. AI-Based Claim Extraction
-- Uses Ollama (LLM: llama3.2)
 - Extracts only factual claims (stats, dates, numbers, statements)
 
 ### 🌐 3. Live Web Verification
