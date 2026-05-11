@@ -12,6 +12,11 @@ from dotenv import load_dotenv
 load_dotenv()
 SERPAPI_KEY = os.getenv("SERPAPI_KEY")
 
+# 🔐 SAFETY CHECK 
+if not SERPAPI_KEY:
+    st.error("❌ SERPAPI_KEY not found. Please set it in .env file")
+    st.stop()
+
 # -----------------------------------
 # PAGE CONFIG
 # -----------------------------------
