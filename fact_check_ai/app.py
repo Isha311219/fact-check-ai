@@ -69,7 +69,7 @@ def extract_claims(text):
 # -----------------------------------
 # SERPAPI KEY 
 # -----------------------------------
-SERPAPI_KEY = "9356321447da23a80a35b09c06f5d99a77fb0b59fd0af1ee361eb00096104ef4"
+SERPAPI_KEY = ""
 
 # -----------------------------------
 # CLAIM VERIFICATION FUNCTION
