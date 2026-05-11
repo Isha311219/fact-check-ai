@@ -3,6 +3,15 @@ import fitz
 import requests
 from serpapi import GoogleSearch
 
+import os
+from dotenv import load_dotenv
+
+# -----------------------------------
+# LOAD ENV VARIABLES
+# -----------------------------------
+load_dotenv()
+SERPAPI_KEY = os.getenv("SERPAPI_KEY")
+
 # -----------------------------------
 # PAGE CONFIG
 # -----------------------------------
@@ -46,7 +55,7 @@ def extract_text_from_pdf(pdf_file):
     return text
 
 # -----------------------------------
-# CLAIM EXTRACTION 
+# CLAIM EXTRACTION
 # -----------------------------------
 def extract_claims(text):
 
@@ -65,11 +74,6 @@ def extract_claims(text):
             claims.append("• " + s)
 
     return "\n".join(claims)
-
-# -----------------------------------
-# SERPAPI KEY 
-# -----------------------------------
-SERPAPI_KEY = ""
 
 # -----------------------------------
 # CLAIM VERIFICATION FUNCTION
@@ -120,27 +124,20 @@ if uploaded_file is not None:
     extracted_text = extract_text_from_pdf(uploaded_file)
 
     st.subheader("📄 Extracted Text")
-
     st.text_area("PDF Content", extracted_text, height=250)
 
-    # -----------------------------------
-    # BUTTON ACTION
-    # -----------------------------------
     if st.button("🔍 Extract & Verify Claims"):
 
         with st.spinner("Analyzing and verifying claims..."):
-
             claims = extract_claims(extracted_text)
 
         st.subheader("📌 Claims Verification Report")
 
-        # COUNTERS
         verified = 0
         uncertain = 0
         false = 0
         total = 0
 
-        # PROCESS CLAIMS
         for claim in claims.split("\n"):
 
             claim = claim.strip()
@@ -171,7 +168,6 @@ if uploaded_file is not None:
 
                     st.info(f"Evidence: {evidence}")
 
-        # SUMMARY DASHBOARD
         st.markdown("## 📊 Document Summary")
 
         col1, col2, col3, col4 = st.columns(4)
